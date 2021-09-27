@@ -67,7 +67,9 @@ export const Question = props => {
                     justifyContent="center">
                     <Button variant="contained" disabled={currentQuestionNumner === 0} onClick={() => moveQuestion(currentQuestionNumner - 1)}>Previous</Button>
                     <ThemeProvider theme={theme}>
-                        <Button variant="contained" color="cancel" onClick={() => changeView(HOME)}>Cancel</Button>
+                        <Button variant="contained" color="cancel" onClick={() => {
+                            moveQuestion(0); 
+                            changeView(HOME)}}>Cancel</Button>
                     </ThemeProvider>
                     {getButton()}
                 </Stack>
